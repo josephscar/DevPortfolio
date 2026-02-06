@@ -1,5 +1,5 @@
 import { Nav } from "@/components/Nav";
-import { Hero } from "@/components/Hero";
+
 import { Footer } from "@/components/Footer";
 import { ProjectCard } from "@/components/ProjectCard";
 import { projects, skills } from "@/lib/data";
@@ -10,41 +10,84 @@ export default function Home() {
     <div className="min-h-screen bg-background flex flex-col">
       <Nav />
       <main className="pt-16 flex-grow">
-        <Hero />
+        <div className="flex flex-col lg:flex-row min-h-[90vh] border-b-2 border-black">
+          {/* Left Panel - Hero Content */}
+          <section className="w-full lg:w-1/2 p-12 lg:p-20 flex flex-col justify-center border-b-2 lg:border-b-0 lg:border-r-2 border-black relative overflow-hidden">
+            {/* Background Pattern */}
+            <div className="absolute inset-0 bg-halftone opacity-10 pointer-events-none" />
 
-        <section
-          id="projects"
-          className="py-20 border-b-2 border-black bg-white relative"
-        >
-          <div className="absolute top-0 right-0 w-32 h-32 bg-halftone opacity-20 pointer-events-none" />
-          <div className="container mx-auto px-4">
-            <div className="flex justify-between items-end mb-12">
-              <div>
-                <h2 className="font-sans text-5xl font-bold tracking-tighter mb-2">
-                  SELECTED_WORKS
+            <div className="relative z-10 space-y-8">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                <h2 className="font-mono text-sm font-bold bg-accent inline-block px-2 py-1 border-2 border-black mb-4 box-shadow-comic">
+                  Game Dev & Simulation Engineer
                 </h2>
-                <div className="h-2 w-24 bg-accent border-2 border-black box-shadow-comic" />
-              </div>
-              <div className="hidden md:block font-mono text-sm text-muted-foreground">
-                // 2023 - 2025
-              </div>
-            </div>
+              </motion.div>
 
-            <div className="grid md:grid-cols-2 gap-8">
-              {projects.map((project, index) => (
-                <motion.div
-                  key={project.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                >
-                  <ProjectCard project={project} />
-                </motion.div>
-              ))}
+              <motion.h1
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.7, delay: 0.2 }}
+                className="font-sans text-6xl md:text-8xl font-bold leading-[0.9] tracking-tighter"
+              >
+                Joseph
+                <br />
+                <span className="text-stroke text-white drop-shadow-[4px_4px_0_rgba(0,0,0,1)]">
+                  Scarnecchia
+                </span>
+                <br />
+              </motion.h1>
+
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.7, delay: 0.4 }}
+                className="font-mono text-lg text-muted-foreground max-w-md border-l-4 border-accent pl-4"
+              >
+                Lead game dev based in Fullerton, CA. Specializing in gameplay
+                systems, physics, and AI simulation. Currently spearheading a
+                turn-based RPG with Unity 6.
+              </motion.p>
             </div>
-          </div>
-        </section>
+          </section>
+
+          {/* Right Panel - Selected Works */}
+          <section
+            id="projects"
+            className="w-full lg:w-1/2 bg-white relative overflow-y-auto max-h-[90vh]"
+          >
+            <div className="p-12 lg:p-20">
+              <div className="flex justify-between items-end mb-12">
+                <div>
+                  <h2 className="font-sans text-5xl font-bold tracking-tighter mb-2">
+                    SELECTED_WORKS
+                  </h2>
+                  <div className="h-2 w-24 bg-accent border-2 border-black box-shadow-comic" />
+                </div>
+                <div className="hidden md:block font-mono text-sm text-muted-foreground">
+                  // 2023 - 2025
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 gap-8">
+                {projects.map((project, index) => (
+                  <motion.div
+                    key={project.id}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                  >
+                    <ProjectCard project={project} />
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </section>
+        </div>
 
         <section className="py-20 bg-secondary relative overflow-hidden">
           <div className="absolute inset-0 bg-halftone-sm opacity-5 pointer-events-none" />

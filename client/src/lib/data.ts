@@ -3,52 +3,66 @@ export const projects = [
     id: 1,
     title: "Crown's Landing",
     description:
-      "I acted as lead gameplay system designer for this Multiplayer 3D turn-based RPG inspired by Wizard101. Apart from gameplay design, I managed the work of 3 different teams (Art, Gameplay, and Networking) to bring this project to fruition.",
-    tags: ["Unity", "C#", "HLSL", "Wwise"],
+      "I acted as lead gameplay system developer for this low-poly exploration centered RPG. Apart from gameplay design, I managed a team of 5 developers to bring this project to fruition.",
+    tags: ["Unity", "C#"],
     image:
       "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2070&auto=format&fit=crop",
     link: "#",
+    longDescription: "As project manager and lead developer I oversaw the development of the core gameplay systems for Crown's Landing. We focused heavily on tactile feedback during combat, ensuring every action felt grounded in the game world's physics.",
+    releaseDate: "MAY 2026",
+    category: "GAMEPLAY"
   },
   {
     id: 2,
-    title: "VOID STRIDER",
+    title: "WIZARD 202",
     description:
-      "Atmospheric exploration game set in a decaying orbital station. Features custom volumetric fog and gravity mechanics.",
-    tags: ["Unreal Engine 5", "C++", "Blueprints"],
+      "Spellcasting PvE example inspired by Wizard101 I solo built from scratch. Created all gameplay systems by myself and used Unity Store assets for art and music.",
+    tags: ["Unity", "C#", "AI DESIGN"],
     image:
       "https://images.unsplash.com/photo-1614726365723-49cfae974e6c?q=80&w=2574&auto=format&fit=crop",
     link: "#",
+    longDescription: "I created a fully functional spellcasting system for Wizard 202 with a complimentary scene that simulates the Wizard101 combat loop versus intelligent AI I designed. I focused on creating modular spell creation that allowed for complex spell combinations alongside a  custom animation director pipeline to allow for streamlined animation events that simulate the Wizard101 combat loop.",
+    releaseDate: "UNRELEASED",
+    category: "PROTOTYPE"
   },
   {
     id: 3,
-    title: "PIXEL DUNGEON",
+    title: "Animation Director Pipeline",
     description:
-      "A roguelite dungeon crawler with physics-based combat and destructible environments.",
-    tags: ["Godot", "GDScript", "Pixel Art"],
+      "For my WIZARD 202 project, I created a custom animation director pipeline to allow for streamlined animation events.",
+    tags: ["Unity", "C#", "Custom Editor Tools"],
     image:
       "https://images.unsplash.com/photo-1552820728-8b83bb6b773f?q=80&w=2070&auto=format&fit=crop",
     link: "#",
+    longDescription: "A deep dive into the custom editor window tools built to support the animation event pipeline, making the workflow heavily automated for animators.",
+    releaseDate: "JAN 2026",
+    category: "UNITY TOOLS PROGRAMMING"
   },
   {
     id: 4,
-    title: "SHADER LABS",
+    title: "PROJECT TRIBUNAL",
     description:
-      "A collection of interactive GLSL shader experiments and visual effects libraries for web and game engines.",
-    tags: ["WebGL", "GLSL", "Three.js"],
+      "In progress turn-based strategy game with a unique grid-based combat system. Planned to be a multiplayer experience.",
+    tags: ["Unity", "C#", "A* ALG", "NETWORKING"],
     image:
       "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop",
     link: "#",
+    longDescription: "A look into the grid-based movement logic, pathfinding optimizations, and turn-based resolution state machines designed for Project Tribunal.",
+    releaseDate: "TBD",
+    category: "TURN-BASED MULTIPLAYER"
   },
 ];
 
 export const skills = [
   {
     category: "ENGINES",
-    items: ["Unity 2023", "Unreal Engine 5", "Godot 4", "Custom C++ Engines"],
+    items: ["Unity 6", "Unreal Engine 5"],
   },
   {
     category: "LANGUAGES",
-    items: ["C#", "C++", "GLSL/HLSL", "Python", "TypeScript"],
+    items: ["C#", "C++", "SQL", "Python", "TypeScript"],
   },
-  { category: "TOOLS", items: ["Blender", "RenderDoc", "Git", "Jira", "FMOD"] },
+  {
+    category: "TOOLS", items: ["Custom Unity Tools", "Git", "Jira", "Confluence"]
+  },
 ];

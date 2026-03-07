@@ -66,7 +66,7 @@ export default function ProjectDetail() {
               </h1>
               <div className="flex flex-wrap gap-2">
                 {project.tags.map((tag) => (
-                  <span key={tag} className="badge-sci-fi px-2 py-1 cursor-default">
+                  <span key={tag} className="badge-sci-fi px-4 py-1.5 cursor-default text-sm border-2 bg-accent-cyan/10 font-bold">
                     {tag}
                   </span>
                 ))}

@@ -1,11 +1,22 @@
+import { useEffect } from "react";
 import { Nav } from "@/components/Nav";
 import { Hero } from "@/components/Hero";
 import { Footer } from "@/components/Footer";
 import { ProjectCard } from "@/components/ProjectCard";
 import { projects, skills } from "@/lib/data";
 import { motion } from "framer-motion";
+import { Linkedin, Github, Mail } from "lucide-react";
 
 export default function Home() {
+  useEffect(() => {
+    if (window.location.hash === "#contact") {
+      setTimeout(() => {
+        document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+        window.history.replaceState(null, "", "/");
+      }, 100);
+    }
+  }, []);
+
   return (
     <div className="min-h-screen flex flex-col bg-transparent">
       <Nav />
@@ -97,17 +108,41 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="py-20 border-t border-border flex text-foreground text-center bg-card">
+        <section id="contact" className="py-20 border-t border-border flex text-foreground text-center bg-card">
           <div className="container mx-auto px-4">
             <h2 className="font-sans text-4xl md:text-6xl font-extrabold tracking-tighter mb-8">
               READY TO <span className="text-gradient-hero">COLLABORATE?</span>
             </h2>
-            <a
-              href="/contact"
-              className="btn-sci-fi text-lg px-8 py-4"
-            >
-              INITIATE_CONTACT
-            </a>
+            <div className="flex justify-center gap-6">
+              <a
+                href="https://www.linkedin.com/in/josephscar/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-sci-fi p-4 animate-attention"
+                style={{ animationDelay: '0s' }}
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="w-6 h-6" />
+              </a>
+              <a
+                href="https://github.com/josephscar"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-sci-fi p-4 animate-attention"
+                style={{ animationDelay: '0.2s' }}
+                aria-label="GitHub"
+              >
+                <Github className="w-6 h-6" />
+              </a>
+              <a
+                href="mailto:josephdscarnecchia@gmail.com"
+                className="btn-sci-fi p-4 animate-attention"
+                style={{ animationDelay: '0.4s' }}
+                aria-label="Email"
+              >
+                <Mail className="w-6 h-6" />
+              </a>
+            </div>
           </div>
         </section>
       </main>

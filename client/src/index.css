@@ -126,6 +126,30 @@
   animation: pulse-slow 3s ease-in-out infinite;
 }
 
+@keyframes attention-bounce {
+
+  0%,
+  8%,
+  20%,
+  32%,
+  100% {
+    transform: translateY(0);
+  }
+
+  16% {
+    transform: translateY(-8px);
+    box-shadow: 0 4px 12px rgba(0, 229, 255, 0.4);
+  }
+
+  24% {
+    transform: translateY(-4px);
+  }
+}
+
+.animate-attention {
+  animation: attention-bounce 5s infinite;
+}
+
 @keyframes whoosh-in {
   0% {
     transform: translateX(-100%) skewX(-15deg);
@@ -226,9 +250,9 @@
 }
 
 .badge-sci-fi {
-  @apply font-mono uppercase bg-transparent inline-flex items-center px-2 py-0.5;
+  @apply font-mono uppercase bg-transparent inline-flex items-center px-3 py-1;
   letter-spacing: 3px;
-  font-size: 10px;
+  font-size: 12px;
   border: 1px solid var(--accent-cyan);
   color: var(--accent-cyan);
   border-radius: 0;

@@ -34,12 +34,19 @@ export function Nav() {
           ))}
         </div>
 
-        <Link href="/contact">
-          <button className={`btn-sci-fi hidden md:flex ${location === '/contact' ? 'bg-accent-cyan text-black' : ''}`}>
-            <Mail className="w-4 h-4" />
-            LET'S TALK
-          </button>
-        </Link>
+        <button
+          className="btn-sci-fi hidden md:flex"
+          onClick={() => {
+            if (location === "/") {
+              document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+            } else {
+              window.location.href = "/#contact";
+            }
+          }}
+        >
+          <Mail className="w-4 h-4" />
+          CONTACT
+        </button>
       </div>
     </nav>
   );

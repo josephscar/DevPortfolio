@@ -1,78 +1,53 @@
 import { motion } from "framer-motion";
-import { ArrowDown } from "lucide-react";
 
 export function Hero() {
   return (
-    <section className="relative min-h-[90vh] flex flex-col justify-center items-center overflow-hidden border-b-2 border-black">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 bg-halftone opacity-10 pointer-events-none" />
+    <section className="relative py-10 border-b border-border overflow-hidden">
+      <div className="absolute inset-0 bg-halftone pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-accent via-[#ff3d6b] to-transparent" />
 
-      <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center relative z-10">
-        <div className="space-y-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <h2 className="font-mono text-sm font-bold bg-accent inline-block px-2 py-1 border-2 border-black mb-4 box-shadow-comic">
-              Game Dev & Simulation Engineer
-            </h2>
-          </motion.div>
-
-          <motion.h1
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="font-sans text-6xl md:text-8xl font-bold leading-[0.9] tracking-tighter"
-          >
-            Joseph
-            
-            <br />
-            <span className="text-stroke text-white drop-shadow-[4px_4px_0_rgba(0,0,0,1)]">
-              Scarnecchia
-            </span>
-            <br />
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.7, delay: 0.4 }}
-            className="font-mono text-lg text-muted-foreground max-w- border-l-4 border-accent pl-4"
-          >
-            Lead game dev based in Fullerton, CA. Specializing in gameplay systems, physics, and AI simulation. Currently spearheading a turn-based RPG with Unity 6.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.6 }}
-            className="pt-4"
-          >
-            <a
-              href="#projects"
-              className="inline-flex items-center gap-2 font-mono font-bold text-lg border-b-2 border-black pb-1 hover:text-accent hover:border-accent transition-colors"
-            >
-              VIEW WORK <ArrowDown className="w-4 h-4 animate-bounce" />
-            </a>
-          </motion.div>
-        </div>
-
+      <div className="container mx-auto px-4 flex flex-col md:flex-row md:items-center justify-between gap-8 relative z-10">
+        {/* Name block */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.9, rotate: 5 }}
-          animate={{ opacity: 1, scale: 1, rotate: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="relative hidden md:block"
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
         >
-          <div className="relative aspect-square max-w-[500px] mx-auto">
-            <div className="absolute inset-0 bg-accent rounded-full opacity-20 blur-3xl animate-pulse" />
-            <img
-              src="/hero-halftone.png"
-              alt="Game Dev Hero"
-              className="relative z-10 w-full h-full object-contain drop-shadow-[8px_8px_0_rgba(0,0,0,1)] border-2 border-black bg-white"
-            />
+          <span className="section-label mb-3 block">Game Dev &amp; Simulation Engineer</span>
+          <h1 className="font-sans font-bold leading-none tracking-tighter">
+            <span className="block text-4xl md:text-5xl">Joseph</span>
+            <span className="block text-2xl md:text-3xl text-accent mt-0.5">Scarnecchia</span>
+          </h1>
+        </motion.div>
+
+        {/* Profile photo */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="flex-shrink-0 mx-auto md:mx-0"
+        >
+          <div className="relative w-36 h-36 md:w-44 md:h-44">
+            {/* Cyan ring */}
+            <div className="absolute inset-0 rounded-full border-2 border-accent" />
+            {/* Placeholder circle */}
+            <div className="w-full h-full rounded-full bg-card border border-border overflow-hidden flex items-center justify-center">
+              <span className="font-mono text-xs text-muted-foreground tracking-widest uppercase text-center leading-tight">
+                PHOTO<br/>SOON
+              </span>
+            </div>
           </div>
         </motion.div>
+
+        {/* Bio block */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="font-mono text-sm text-foreground max-w-sm border-l-2 border-accent pl-4 leading-relaxed"
+        >
+          Lead game dev based in Fullerton, CA. Specializing in gameplay systems, physics, and AI simulation. Currently spearheading a turn-based RPG with Unity 6.
+        </motion.p>
       </div>
     </section>
   );

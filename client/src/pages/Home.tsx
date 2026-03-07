@@ -12,20 +12,20 @@ export default function Home() {
       <main className="pt-16 flex-grow">
         <Hero />
 
+        {/* ── Projects Section ── */}
         <section
           id="projects"
-          className="py-20 border-b-2 border-black bg-white relative"
+          className="py-16 border-b border-border relative"
         >
-          <div className="absolute top-0 right-0 w-32 h-32 bg-halftone opacity-20 pointer-events-none" />
+          <div className="absolute top-0 right-0 w-48 h-48 bg-halftone pointer-events-none opacity-60" />
           <div className="container mx-auto px-4">
             <div className="flex justify-between items-end mb-12">
               <div>
-                <h2 className="font-sans text-5xl font-bold tracking-tighter mb-2">
+                <h2 className="font-mono text-2xl md:text-3xl font-bold tracking-widest uppercase text-white">
                   SELECTED_WORKS
                 </h2>
-                <div className="h-2 w-24 bg-accent border-2 border-black box-shadow-comic" />
               </div>
-              <div className="hidden md:block font-mono text-sm text-muted-foreground">
+              <div className="hidden md:block font-mono text-sm text-muted-foreground tracking-widest">
                 // 2023 - 2025
               </div>
             </div>
@@ -46,15 +46,17 @@ export default function Home() {
           </div>
         </section>
 
+        {/* ── Tech Stack Section ── */}
         <section className="py-20 bg-secondary relative overflow-hidden">
-          <div className="absolute inset-0 bg-halftone-sm opacity-5 pointer-events-none" />
+          <div className="absolute inset-0 bg-halftone-sm pointer-events-none" />
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-12">
               <div>
+                <span className="section-label mb-3 block">Capabilities</span>
                 <h2 className="font-sans text-4xl font-bold tracking-tighter mb-6">
                   TECH_STACK
                 </h2>
-                <p className="font-mono text-muted-foreground mb-8 max-w-md">
+                <p className="font-mono text-sm text-muted-foreground mb-8 max-w-md leading-relaxed">
                   My toolkit is built for performance and scalability. I
                   specialize in engine architecture and graphics programming.
                 </p>
@@ -62,14 +64,14 @@ export default function Home() {
                 <div className="space-y-8">
                   {skills.map((skillGroup) => (
                     <div key={skillGroup.category}>
-                      <h3 className="font-mono font-bold border-b-2 border-black inline-block mb-4">
+                      <h3 className="font-mono text-xs font-bold border-b border-border inline-block mb-4 pb-1 text-accent tracking-widest uppercase">
                         {skillGroup.category}
                       </h3>
-                      <div className="flex flex-wrap gap-3">
+                      <div className="flex flex-wrap gap-2">
                         {skillGroup.items.map((skill) => (
                           <span
                             key={skill}
-                            className="bg-white border-2 border-black px-3 py-1 font-mono text-sm font-bold box-shadow-comic hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all cursor-default"
+                            className="bg-card border border-border px-3 py-1 font-mono text-xs text-foreground hover:border-accent hover:text-accent transition-all cursor-default tracking-wide"
                           >
                             {skill}
                           </span>
@@ -80,18 +82,16 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="flex items-center justify-center p-8 border-2 border-black bg-white box-shadow-comic relative">
-                <div className="absolute top-4 right-4 w-4 h-4 bg-accent rounded-full border-2 border-black" />
+              <div className="flex items-center justify-center p-8 border border-border bg-card box-shadow-comic relative">
+                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-accent via-[#ff3d6b] to-transparent" />
                 <div className="text-center space-y-4">
-                  <div className="font-sans text-6xl font-bold leading-none">
-                    <span className="text-stroke text-white drop-shadow-[2px_2px_0_rgba(0,0,0,1)]">
-                      100%
-                    </span>
+                  <div className="font-sans text-6xl font-bold leading-none text-foreground">
+                    100%
                   </div>
-                  <div className="font-mono font-bold text-xl bg-accent px-2">
+                  <div className="font-mono font-bold text-xs tracking-widest uppercase border border-accent text-accent px-4 py-2 badge-pulse">
                     PASSION
                   </div>
-                  <p className="font-mono text-sm max-w-[200px] mx-auto">
+                  <p className="font-mono text-xs text-muted-foreground max-w-[200px] mx-auto leading-relaxed">
                     Committed to pushing the boundaries of interactive
                     entertainment.
                   </p>
@@ -101,14 +101,19 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="py-20 border-t-2 border-black bg-black text-white text-center">
-          <div className="container mx-auto px-4">
+        {/* ── CTA Section ── */}
+        <section className="py-20 border-t border-border bg-card text-center relative overflow-hidden">
+          <div className="absolute inset-0 bg-halftone pointer-events-none" />
+          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent to-transparent" />
+          <div className="container mx-auto px-4 relative z-10">
+            <span className="section-label mb-4 mx-auto justify-center">Next Step</span>
             <h2 className="font-sans text-4xl md:text-6xl font-bold tracking-tighter mb-8">
-              READY TO <span className="text-accent">COLLABORATE?</span>
+              READY TO{" "}
+              <span className="text-accent">COLLABORATE?</span>
             </h2>
             <a
               href="/contact"
-              className="inline-block bg-white text-black font-mono font-bold text-xl px-8 py-4 border-2 border-transparent hover:border-white hover:bg-black hover:text-white transition-all box-shadow-comic"
+              className="inline-block font-mono font-bold text-sm tracking-widest px-8 py-4 border border-accent text-accent hover:bg-accent hover:text-background transition-all uppercase"
             >
               INITIATE_CONTACT
             </a>

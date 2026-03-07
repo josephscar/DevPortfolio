@@ -13,14 +13,15 @@ export default function Projects() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          <div className="flex flex-col md:flex-row justify-between items-end mb-12 border-b-2 border-black pb-4">
-            <h1 className="font-sans text-6xl font-bold tracking-tighter">
-              ALL{" "}
-              <span className="text-stroke text-white drop-shadow-[3px_3px_0_rgba(0,0,0,1)]">
-                PROJECTS
-              </span>
-            </h1>
-            <p className="font-mono text-muted-foreground max-w-md text-right">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-12 border-b border-border pb-6">
+            <div>
+              <span className="section-label mb-3 block">Archive</span>
+              <h1 className="font-sans text-6xl font-bold tracking-tighter">
+                ALL{" "}
+                <span className="text-accent">PROJECTS</span>
+              </h1>
+            </div>
+            <p className="font-mono text-sm text-muted-foreground max-w-md text-right leading-relaxed">
               A comprehensive archive of game jams, professional work, and
               experiments.
             </p>

@@ -14,16 +14,12 @@ export default function Home() {
 
         <section
           id="projects"
-          className="py-20 border-b-2 border-black bg-white relative"
+          className="py-20 border-b border-border bg-background relative"
         >
-          <div className="absolute top-0 right-0 w-32 h-32 bg-halftone opacity-20 pointer-events-none" />
           <div className="container mx-auto px-4">
             <div className="flex justify-between items-end mb-12">
-              <div>
-                <h2 className="font-sans text-5xl font-bold tracking-tighter mb-2">
-                  SELECTED_WORKS
-                </h2>
-                <div className="h-2 w-24 bg-accent border-2 border-black box-shadow-comic" />
+              <div className="w-full md:w-2/3">
+                <h2 className="section-label mb-2 w-full">SELECTED WORKS</h2>
               </div>
               <div className="hidden md:block font-mono text-sm text-muted-foreground">
                 // 2023 - 2025
@@ -46,13 +42,12 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="py-20 bg-secondary relative overflow-hidden">
-          <div className="absolute inset-0 bg-halftone-sm opacity-5 pointer-events-none" />
+        <section className="py-20 bg-card relative overflow-hidden">
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-12">
               <div>
-                <h2 className="font-sans text-4xl font-bold tracking-tighter mb-6">
-                  TECH_STACK
+                <h2 className="section-label mb-6 w-full">
+                  TECH STACK
                 </h2>
                 <p className="font-mono text-muted-foreground mb-8 max-w-md">
                   My toolkit is built for performance and scalability. I
@@ -62,14 +57,14 @@ export default function Home() {
                 <div className="space-y-8">
                   {skills.map((skillGroup) => (
                     <div key={skillGroup.category}>
-                      <h3 className="font-mono font-bold border-b-2 border-black inline-block mb-4">
+                      <h3 className="section-label mb-4 w-full">
                         {skillGroup.category}
                       </h3>
                       <div className="flex flex-wrap gap-3">
                         {skillGroup.items.map((skill) => (
                           <span
                             key={skill}
-                            className="bg-white border-2 border-black px-3 py-1 font-mono text-sm font-bold box-shadow-comic hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all cursor-default"
+                            className="badge-sci-fi px-3 py-1 cursor-default text-xs"
                           >
                             {skill}
                           </span>
@@ -80,15 +75,13 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="flex items-center justify-center p-8 border-2 border-black bg-white box-shadow-comic relative">
-                <div className="absolute top-4 right-4 w-4 h-4 bg-accent rounded-full border-2 border-black" />
+              <div className="card-sci-fi flex items-center justify-center p-8 relative">
+                <div className="absolute top-4 right-4 w-4 h-4 bg-accent-lime animate-pulse-slow" />
                 <div className="text-center space-y-4">
-                  <div className="font-sans text-6xl font-bold leading-none">
-                    <span className="text-stroke text-white drop-shadow-[2px_2px_0_rgba(0,0,0,1)]">
-                      100%
-                    </span>
+                  <div className="font-sans text-6xl font-extrabold leading-none text-gradient-hero py-2">
+                    100%
                   </div>
-                  <div className="font-mono font-bold text-xl bg-accent px-2">
+                  <div className="ui-label text-accent-cyan px-2">
                     PASSION
                   </div>
                   <p className="font-mono text-sm max-w-[200px] mx-auto">
@@ -101,14 +94,14 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="py-20 border-t-2 border-black bg-black text-white text-center">
+        <section className="py-20 border-t border-border bg-background text-foreground text-center">
           <div className="container mx-auto px-4">
-            <h2 className="font-sans text-4xl md:text-6xl font-bold tracking-tighter mb-8">
-              READY TO <span className="text-accent">COLLABORATE?</span>
+            <h2 className="font-sans text-4xl md:text-6xl font-extrabold tracking-tighter mb-8">
+              READY TO <span className="text-gradient-hero">COLLABORATE?</span>
             </h2>
             <a
               href="/contact"
-              className="inline-block bg-white text-black font-mono font-bold text-xl px-8 py-4 border-2 border-transparent hover:border-white hover:bg-black hover:text-white transition-all box-shadow-comic"
+              className="btn-sci-fi text-lg px-8 py-4"
             >
               INITIATE_CONTACT
             </a>

@@ -13,10 +13,10 @@ export default function Projects() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          <div className="flex flex-col md:flex-row justify-between items-end mb-12 border-b-2 border-black pb-4">
-            <h1 className="font-sans text-6xl font-bold tracking-tighter">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-12 border-b border-border pb-4">
+            <h1 className="font-sans text-6xl font-extrabold tracking-tighter text-foreground">
               ALL{" "}
-              <span className="text-stroke text-white drop-shadow-[3px_3px_0_rgba(0,0,0,1)]">
+              <span className="text-gradient-hero">
                 PROJECTS
               </span>
             </h1>

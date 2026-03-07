@@ -61,7 +61,7 @@ export default function ProjectDetail() {
             className="space-y-8"
           >
             <div>
-              <h1 className="font-sans text-6xl font-extrabold tracking-tighter mb-4 text-gradient-hero py-2">
+              <h1 className="font-sans text-5xl md:text-6xl font-extrabold tracking-tighter mb-4 text-white py-4 leading-tight">
                 {project.title}
               </h1>
               <div className="flex flex-wrap gap-2">

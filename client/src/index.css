@@ -9,32 +9,32 @@
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  
+
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
-  
+
   --color-popover: var(--card);
   --color-popover-foreground: var(--card-foreground);
-  
+
   --color-primary: var(--accent-cyan);
   --color-primary-foreground: #000000;
-  
+
   --color-secondary: var(--border-color);
   --color-secondary-foreground: var(--foreground);
-  
+
   --color-muted: var(--card);
   --color-muted-foreground: var(--muted-text);
-  
+
   --color-accent: var(--accent-cyan);
   --color-accent-foreground: #000000;
-  
+
   --color-destructive: var(--accent-red);
   --color-destructive-foreground: #ffffff;
-  
+
   --color-border: var(--border-color);
   --color-input: var(--border-color);
   --color-ring: var(--accent-cyan);
-  
+
   --radius-sm: 0rem;
   --radius-md: 0rem;
   --radius-lg: 0rem;
@@ -51,12 +51,12 @@
   --card: #111118;
   --card-foreground: #e8e8f0;
   --border-color: #2a2a3a;
-  
+
   --accent-cyan: #00e5ff;
   --accent-red: #ff3d6b;
   --accent-lime: #b4ff4e;
-  
-  --muted-text: #666680;
+
+  --muted-text: #8888a0;
 
   --radius: 0;
 }
@@ -65,47 +65,96 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply font-sans antialiased text-foreground;
     background-color: var(--background);
-    background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-image: linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
     background-size: 40px 40px;
   }
-  
-  h1, h2, h3, h4, h5, h6 {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-sans font-extrabold;
   }
 }
 
 /* Halftone overrides */
-.bg-halftone, .bg-halftone-sm {
+.bg-halftone,
+.bg-halftone-sm {
   background-image: none !important;
 }
+
 .text-stroke {
   -webkit-text-stroke: unset;
   color: inherit;
 }
+
 .text-shadow-comic {
   text-shadow: none;
 }
+
 .box-shadow-comic {
   box-shadow: none;
   transition: all 0.2s ease;
 }
+
 .box-shadow-comic:hover {
   box-shadow: none;
   transform: translateY(-2px);
   border-color: var(--accent-cyan);
 }
 
-/* Animations */
 @keyframes pulse-slow {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
 }
+
 .animate-pulse-slow {
   animation: pulse-slow 3s ease-in-out infinite;
+}
+
+@keyframes whoosh-in {
+  0% {
+    transform: translateX(-100%) skewX(-15deg);
+    opacity: 0;
+    color: var(--accent-cyan);
+    text-shadow: 0 0 20px var(--accent-cyan);
+  }
+
+  50% {
+    transform: translateX(10%) skewX(-5deg);
+    opacity: 1;
+    color: var(--accent-cyan);
+    text-shadow: 0 0 30px var(--accent-cyan);
+  }
+
+  100% {
+    transform: translateX(0) skewX(0);
+    opacity: 1;
+    color: #ffffff;
+    /* Ends up white */
+    text-shadow: none;
+  }
+}
+
+.animate-whoosh-in {
+  display: inline-block;
+  animation: whoosh-in 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  /* Start transparent so it doesn't flash before animation */
+  opacity: 0;
 }
 
 /* Section labels / eyebrows */
@@ -116,6 +165,7 @@
   align-items: center;
   gap: 1rem;
 }
+
 .section-label::after {
   content: '';
   flex-grow: 1;
@@ -130,10 +180,7 @@
 }
 
 .text-gradient-hero {
-  background: linear-gradient(135deg, var(--accent-cyan), var(--accent-red), var(--accent-lime));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--accent-cyan);
 }
 
 /* Cards and panels */
@@ -145,12 +192,19 @@
   transition: all 0.2s ease;
   box-shadow: none;
 }
+
 .card-sci-fi:hover {
   transform: translateY(-2px);
   border-color: var(--accent-cyan);
 }
-.border-top-red { border-top-color: var(--accent-red); }
-.border-top-lime { border-top-color: var(--accent-lime); }
+
+.border-top-red {
+  border-top-color: var(--accent-red);
+}
+
+.border-top-lime {
+  border-top-color: var(--accent-lime);
+}
 
 /* Buttons and Badges */
 .btn-sci-fi {
@@ -165,6 +219,7 @@
   align-items: center;
   justify-content: center;
 }
+
 .btn-sci-fi:hover {
   background-color: var(--accent-cyan);
   color: #000;
@@ -180,7 +235,8 @@
 }
 
 /* Code blocks */
-pre.code-sci-fi, div.code-sci-fi pre {
+pre.code-sci-fi,
+div.code-sci-fi pre {
   background-color: #050508 !important;
   border: 1px solid var(--border-color) !important;
   border-left: 3px solid var(--accent-cyan) !important;
@@ -192,9 +248,26 @@ pre.code-sci-fi, div.code-sci-fi pre {
 }
 
 /* Syntax Highlighting Base (if markdown renders with basic tokens) */
-.token.keyword { color: #ff79c6; }
-.token.function { color: #50fa7b; }
-.token.string { color: #f1fa8c; }
-.token.comment { color: #6272a4; }
-.token.constant { color: #00e5ff; }
-.token.number { color: #ffb86c; }
+.token.keyword {
+  color: #ff79c6;
+}
+
+.token.function {
+  color: #50fa7b;
+}
+
+.token.string {
+  color: #f1fa8c;
+}
+
+.token.comment {
+  color: #6272a4;
+}
+
+.token.constant {
+  color: #00e5ff;
+}
+
+.token.number {
+  color: #ffb86c;
+}

@@ -34,8 +34,8 @@ export default function About() {
           animate={{ opacity: 1, y: 0 }}
           className="max-w-4xl mx-auto"
         >
-          <h1 className="font-sans text-6xl font-extrabold tracking-tighter mb-8 text-foreground">
-            BEHIND THE <span className="text-gradient-hero">PIXELS</span>
+          <h1 className="font-sans text-6xl font-extrabold tracking-tighter mb-8 text-foreground uppercase">
+            ABOUT <span className="text-accent-cyan">ME</span>
           </h1>
 
           <div className="grid md:grid-cols-[1fr_2fr] gap-12 mb-20">
@@ -68,7 +68,7 @@ export default function About() {
           </div>
 
           <div>
-            <h2 className="section-label mb-8 w-full">EXPERIENCE LOG</h2>
+            <h2 className="section-label mb-10 w-full text-base md:text-xl">EXPERIENCE LOG</h2>
             <div className="space-y-8">
               {experiences.map((exp, i) => (
                 <motion.div
@@ -79,10 +79,10 @@ export default function About() {
                   className="relative pl-8 border-l border-border"
                 >
                   <div className="absolute -left-[4.5px] top-1.5 w-2 h-2 bg-accent-cyan animate-pulse-slow" />
-                  <div className="font-mono text-xs font-bold text-accent-cyan mb-1 flex items-center gap-2 tracking-widest">
+                  <div className="font-mono text-sm font-bold text-accent-cyan mb-1 flex items-center gap-2 tracking-widest">
                     <Calendar className="w-4 h-4" /> {exp.year}
                   </div>
-                  <h3 className="font-sans text-xl font-extrabold uppercase text-foreground">{exp.role}</h3>
+                  <h3 className="font-mono text-2xl font-bold uppercase text-foreground mt-3 mb-1">{exp.role}</h3>
                   <div className="font-mono font-bold mb-2 flex items-center gap-2">
                     <Briefcase className="w-4 h-4" /> {exp.company}
                   </div>

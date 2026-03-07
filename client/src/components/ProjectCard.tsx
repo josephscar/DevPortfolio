@@ -18,7 +18,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
   return (
     <Link href={`/project/${project.id}`}>
       <Card className="card-sci-fi h-full flex flex-col md:flex-row overflow-hidden group cursor-pointer border-l-4">
-        <div className="relative w-full md:w-2/5 h-64 md:h-auto overflow-hidden border-b md:border-b-0 md:border-r border-border flex-shrink-0">
+        <div className="relative w-full md:w-1/2 lg:w-3/5 h-64 md:h-auto overflow-hidden border-b md:border-b-0 md:border-r border-border flex-shrink-0">
           <div className="absolute inset-0 bg-transparent opacity-20 z-10 pointer-events-none mix-blend-overlay" />
           <div className="absolute inset-0 bg-accent-cyan/20 opacity-0 group-hover:opacity-100 transition-opacity z-10 mix-blend-multiply" />
           <img
@@ -38,7 +38,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             </CardDescription>
           </CardHeader>
           <CardContent className="flex-grow">
-            <p className="font-mono text-sm leading-relaxed">
+            <p className="font-mono text-base md:text-lg leading-relaxed text-muted-foreground">
               {project.description}
             </p>
           </CardContent>
@@ -47,7 +47,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
               <Badge
                 key={tag}
                 variant="outline"
-                className="badge-sci-fi"
+                className="badge-sci-fi text-sm md:text-base py-1.5 px-4 border-2 font-bold bg-accent-cyan/10"
               >
                 {tag}
               </Badge>

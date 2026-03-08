@@ -24,7 +24,7 @@ export default function ProjectDetail() {
       <main className="pt-24 container mx-auto px-4 pb-20 flex-grow">
         <Link href="/projects">
           <a className="inline-flex items-center gap-2 font-mono font-bold hover:text-accent-cyan mb-8 transition-colors uppercase tracking-[3px] text-xs">
-            <ArrowLeft className="w-4 h-4" /> BACK_TO_ARCHIVE
+            <ArrowLeft className="w-4 h-4" /> ALL PROJECTS
           </a>
         </Link>
 

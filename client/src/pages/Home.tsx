@@ -38,7 +38,7 @@ export default function Home() {
                 </h2>
               </div>
               <div className="hidden md:block font-mono text-sm text-muted-foreground">
-                // 2023 - 2025
+                // 2022 - 2026
               </div>
             </div>
 
@@ -148,7 +148,7 @@ export default function Home() {
 
             <AnimatePresence>
               {showEmail && (
-                <motion.div 
+                <motion.div
                   initial={{ opacity: 0, height: 0, y: -10 }}
                   animate={{ opacity: 1, height: 'auto', y: 0 }}
                   exit={{ opacity: 0, height: 0, y: -10 }}

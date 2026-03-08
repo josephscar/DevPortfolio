@@ -7,9 +7,9 @@ export default function Experience() {
   const experiences = [
     {
       year: "AUGUST 2025 - PRESENT",
-      role: "GAMEPLAY DEV // PROJECT MANAGER",
+      role: "GAMEPLAY DEV & PROJECT MANAGER",
       company: "Crown's Landing Team",
-      description: "Primarily lead gameplay design team but acted as project manager to combine the efforts of gameplay, art, and networking teams to create a fullly functional multiplayer turn-based RPG. My gameplay system contributions include complex AI state machines and combat mechanics."
+      description: "Primarily lead gameplay design team but acted as project manager to combine the efforts of developer and art teams to create a fully functional 3D RPG in Unity. My gameplay system contributions include complex modular combat mechanics, AI state machines, and player progression systems."
     },
     {
       year: "2023 - 2025",

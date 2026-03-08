@@ -2,29 +2,9 @@ import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Calendar, Briefcase, GraduationCap, ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function About() {
-  const experiences = [
-    {
-      year: "AUGUST 2025 - PRESENT",
-      role: "GAMEPLAY DEV // PROJECT MANAGER",
-      company: "Crown's Landing Team",
-      description: "Primarily lead gameplay design team but acted as project manager to combine the efforts of gameplay, art, and networking teams to create a fullly functional multiplayer turn-based RPG. My gameplay system contributions include complex AI state machines and combat mechanics."
-    },
-    {
-      year: "2023 - 2025",
-      role: "SOFTWARE ENGINEER",
-      company: "Jason Winters Tea",
-      description: "Maintained and updated the company's website and internal tools using React, Node.js, and MongoDB."
-    },
-    {
-      year: "2022 - 2023",
-      role: "GAME COURSE DESIGNER & INSTRUCTOR",
-      company: "Code Ninjas",
-      description: "Designed and taught game development curriculum for children aged 6-15. Worked closely with the team to develop new courses that attracted more students and increased revenue."
-    }
-  ];
 
   const profileImages = [
     "/hero-halftone.png",
@@ -104,47 +84,9 @@ export default function About() {
                 With over 5 years of experience in Unity and Unreal, I bridge the gap between technical implementation and creative vision. I don't just write code; I craft experiences.
               </p>
               <div className="text-sm">In my free time, I am an avid reader of sci-fi novels and enjoy the occasional double black diamond on my skis. Of course, I also play more video games than I should.</div>
-              <div className="pt-4">
-                <h3 className="text-accent-cyan font-bold mb-4 flex items-center gap-2">
-                  <GraduationCap className="w-5 h-5" /> EDUCATION
-                </h3>
-                <div className="border-l-2 border-accent pl-4">
-                  <div className="font-bold text-foreground">B.S. Computer Science</div>
-                  <div className="text-sm">California State University Fullerton, Fall 2026</div>
-                </div>
-              </div>
             </div>
           </div>
 
-          <div>
-            <h2 className="font-sans text-3xl md:text-4xl font-extrabold tracking-tighter text-foreground uppercase mb-10 flex items-center gap-6">
-              EXPERIENCE <span className="text-accent-cyan">LOG</span>
-              <div className="h-px bg-gradient-to-r from-accent-cyan to-transparent flex-grow opacity-50" />
-            </h2>
-            <div className="space-y-8">
-              {experiences.map((exp, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.1 }}
-                  className="relative pl-8 border-l border-border"
-                >
-                  <div className="absolute -left-[4.5px] top-1.5 w-2 h-2 bg-accent-cyan animate-pulse-slow" />
-                  <div className="font-mono text-sm font-bold text-accent-cyan mb-1 flex items-center gap-2 tracking-widest">
-                    <Calendar className="w-4 h-4" /> {exp.year}
-                  </div>
-                  <h3 className="font-mono text-2xl font-bold uppercase text-foreground mt-3 mb-1">{exp.role}</h3>
-                  <div className="font-mono font-bold mb-2 flex items-center gap-2">
-                    <Briefcase className="w-4 h-4" /> {exp.company}
-                  </div>
-                  <p className="font-mono text-muted-foreground max-w-xl">
-                    {exp.description}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
         </motion.div>
       </main>
       <Footer />

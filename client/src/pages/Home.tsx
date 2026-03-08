@@ -1,13 +1,15 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Nav } from "@/components/Nav";
 import { Hero } from "@/components/Hero";
 import { Footer } from "@/components/Footer";
 import { ProjectCard } from "@/components/ProjectCard";
 import { projects, skills } from "@/lib/data";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Linkedin, Github, Mail } from "lucide-react";
 
 export default function Home() {
+  const [showEmail, setShowEmail] = useState(false);
+
   useEffect(() => {
     if (window.location.hash === "#contact") {
       setTimeout(() => {
@@ -25,7 +27,7 @@ export default function Home() {
 
         <section
           id="projects"
-          className="py-20 border-b border-border bg-transparent relative"
+          className="py-20 border-b border-border bg-background relative"
         >
           <div className="container mx-auto px-4">
             <div className="flex justify-between items-end mb-12">
@@ -56,7 +58,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="py-20 bg-transparent relative overflow-hidden">
+        <section className="py-20 bg-background relative overflow-hidden">
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-12">
               <div>
@@ -134,15 +136,32 @@ export default function Home() {
               >
                 <Github className="w-6 h-6" />
               </a>
-              <a
-                href="mailto:josephdscarnecchia@gmail.com"
-                className="btn-sci-fi p-4 animate-attention"
+              <button
+                onClick={() => setShowEmail(!showEmail)}
+                className="btn-sci-fi p-4 animate-attention cursor-pointer"
                 style={{ animationDelay: '0.4s' }}
                 aria-label="Email"
               >
                 <Mail className="w-6 h-6" />
-              </a>
+              </button>
             </div>
+
+            <AnimatePresence>
+              {showEmail && (
+                <motion.div 
+                  initial={{ opacity: 0, height: 0, y: -10 }}
+                  animate={{ opacity: 1, height: 'auto', y: 0 }}
+                  exit={{ opacity: 0, height: 0, y: -10 }}
+                  className="overflow-hidden flex justify-center w-full mt-8"
+                >
+                  <div className="py-3 px-6 border border-accent-cyan/50 bg-accent-cyan/5 backdrop-blur-sm">
+                    <a href="mailto:josephdscarnecchia@gmail.com" className="font-mono text-lg md:text-xl text-accent-cyan hover:text-white transition-colors tracking-widest">
+                      josephdscarnecchia@gmail.com
+                    </a>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
         </section>
       </main>
